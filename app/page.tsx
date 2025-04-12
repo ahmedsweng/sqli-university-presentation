@@ -1,102 +1,162 @@
-import Image from "next/image";
+"use client";
+
+import GoodbyeSlide from "@/components/slides/goodbye-slide";
+import Slide1 from "@/components/slides/slide-1";
+import Slide10 from "@/components/slides/slide-10";
+import Slide2 from "@/components/slides/slide-2";
+import Slide4 from "@/components/slides/slide-4";
+import Slide5 from "@/components/slides/slide-5";
+import Slide6 from "@/components/slides/slide-6";
+import Slide7 from "@/components/slides/slide-7";
+import Slide8 from "@/components/slides/slide-8";
+import Slide9 from "@/components/slides/slide-9";
+import WelcomeSlide from "@/components/slides/welcome-slide";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight, Database, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 11;
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  // After mounting, we can safely show the UI
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") {
+        if (currentSlide < totalSlides - 1) {
+          setCurrentSlide(currentSlide + 1);
+        }
+      } else if (e.key === "ArrowLeft") {
+        if (currentSlide > 0) {
+          setCurrentSlide(currentSlide - 1);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentSlide, totalSlides]);
+
+  const nextSlide = () => {
+    if (currentSlide < totalSlides - 1) {
+      setCurrentSlide(currentSlide + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
+  };
+
+  const goToSlide = (slideNumber: number) => {
+    if (slideNumber >= 0 && slideNumber < totalSlides) {
+      setCurrentSlide(slideNumber);
+    }
+  };
+
+  const renderSlide = () => {
+    switch (currentSlide) {
+      case 0:
+        return <WelcomeSlide />;
+      case 1:
+        return <Slide1 />;
+      case 2:
+        return <Slide2 />;
+      case 3:
+        return <Slide4 />;
+      case 4:
+        return <Slide5 />;
+      case 5:
+        return <Slide6 />;
+      case 6:
+        return <Slide7 />;
+      case 7:
+        return <Slide8 />;
+      case 8:
+        return <Slide9 />;
+      case 9:
+        return <Slide10 />;
+      case 10:
+        return <GoodbyeSlide />;
+      default:
+        return <WelcomeSlide />;
+    }
+  };
+
+  // Avoid hydration mismatch by only rendering after mounting
+  if (!mounted) return null;
+
+  return (
+    <div className="flex flex-col h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      <header className="flex items-center justify-between px-6 py-4 border-b bg-white dark:bg-gray-950">
+        <div className="flex items-center gap-2">
+          <Database className="h-5 w-5 text-blue-500" />
+          <h1 className="text-xl font-bold">SQL Injection: Attack & Defense</h1>
         </div>
+        <div className="flex items-center gap-4">
+          <div className="text-sm text-gray-500 dark:text-gray-400">
+            Slide {currentSlide + 1} of {totalSlides}
+          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </Button>
+        </div>
+      </header>
+
+      <main className="flex-1 overflow-hidden overflow-y-scroll">
+        {renderSlide()}
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="border-t bg-white dark:bg-gray-950 p-4">
+        <div className="flex items-center justify-between max-w-6xl mx-auto">
+          <Button
+            variant="outline"
+            onClick={prevSlide}
+            disabled={currentSlide === 0}
+          >
+            <ChevronLeft className="mr-2 h-4 w-4" /> Previous
+          </Button>
+
+          <div className="flex space-x-1">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`h-2 w-2 rounded-full ${
+                  currentSlide === index
+                    ? "bg-blue-500"
+                    : "bg-gray-300 dark:bg-gray-700"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <Button
+            variant="outline"
+            onClick={nextSlide}
+            disabled={currentSlide === totalSlides - 1}
+          >
+            Next <ChevronRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
       </footer>
     </div>
   );
