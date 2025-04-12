@@ -32,7 +32,7 @@ export default function GoodbyeSlide() {
                 Code Examples
               </p>
               <p className="font-medium">
-                github.com/naoum-ahmed/sql-injection-demo
+                github.com/ahmedsweng/sqli-university-presentation
               </p>
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function GoodbyeSlide() {
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Contact
               </p>
-              <p className="font-medium">naoum.ahmed@example.com</p>
+              <p className="font-medium">raoufnaoum15@gmail.com</p>
             </div>
           </div>
         </div>
