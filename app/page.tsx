@@ -1,24 +1,25 @@
 "use client";
 
-import GoodbyeSlide from "@/components/slides/goodbye-slide";
-import Slide1 from "@/components/slides/slide-1";
-import Slide10 from "@/components/slides/slide-10";
-import Slide2 from "@/components/slides/slide-2";
-import Slide4 from "@/components/slides/slide-4";
-import Slide5 from "@/components/slides/slide-5";
-import Slide6 from "@/components/slides/slide-6";
-import Slide7 from "@/components/slides/slide-7";
-import Slide8 from "@/components/slides/slide-8";
-import Slide9 from "@/components/slides/slide-9";
-import WelcomeSlide from "@/components/slides/welcome-slide";
+// New Cloud Computing slide imports
+import CcWelcomeSlide from "@/components/slides/cloud/cc-welcome-slide";
+import CcSlide1 from "@/components/slides/cloud/cc-slide-1";
+import CcSlide2 from "@/components/slides/cloud/cc-slide-2";
+import CcSlide3 from "@/components/slides/cloud/cc-slide-3";
+import CcSlide4 from "@/components/slides/cloud/cc-slide-4";
+import CcSlide5 from "@/components/slides/cloud/cc-slide-5";
+import CcSlide6 from "@/components/slides/cloud/cc-slide-6";
+import CcSlide7 from "@/components/slides/cloud/cc-slide-7";
+import CcGoodbyeSlide from "@/components/slides/cloud/cc-goodbye-slide";
+
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Database, Moon, Sun } from "lucide-react";
+// Updated lucide-react imports for header icon
+import { ChevronLeft, ChevronRight, Cloud, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 11;
+  const totalSlides = 9; // Updated totalSlides
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -64,30 +65,16 @@ export default function Home() {
 
   const renderSlide = () => {
     switch (currentSlide) {
-      case 0:
-        return <WelcomeSlide />;
-      case 1:
-        return <Slide1 />;
-      case 2:
-        return <Slide2 />;
-      case 3:
-        return <Slide4 />;
-      case 4:
-        return <Slide5 />;
-      case 5:
-        return <Slide6 />;
-      case 6:
-        return <Slide7 />;
-      case 7:
-        return <Slide8 />;
-      case 8:
-        return <Slide9 />;
-      case 9:
-        return <Slide10 />;
-      case 10:
-        return <GoodbyeSlide />;
-      default:
-        return <WelcomeSlide />;
+      case 0: return <CcWelcomeSlide />;
+      case 1: return <CcSlide1 />;
+      case 2: return <CcSlide2 />;
+      case 3: return <CcSlide3 />;
+      case 4: return <CcSlide4 />;
+      case 5: return <CcSlide5 />;
+      case 6: return <CcSlide6 />;
+      case 7: return <CcSlide7 />;
+      case 8: return <CcGoodbyeSlide />;
+      default: return <CcWelcomeSlide />;
     }
   };
 
@@ -98,8 +85,9 @@ export default function Home() {
     <div className="flex flex-col h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <header className="flex items-center justify-between px-6 py-4 border-b bg-white dark:bg-gray-950">
         <div className="flex items-center gap-2">
-          <Database className="h-5 w-5 text-blue-500" />
-          <h1 className="text-xl font-bold">SQL Injection: Attack & Defense</h1>
+          {/* Updated icon and title for Cloud Computing presentation */}
+          <Cloud className="h-5 w-5 text-blue-500" />
+          <h1 className="text-xl font-bold">Cloud Computing Presentation</h1>
         </div>
         <div className="flex items-center gap-4">
           <div className="text-sm text-gray-500 dark:text-gray-400">
