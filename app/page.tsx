@@ -2,7 +2,7 @@
 
 // New Cloud Computing slide imports
 import CcWelcomeSlide from "@/components/slides/cloud/cc-welcome-slide";
-import CcSlide1 from "@/components/slides/cloud/cc-slide-1";
+// import CcSlide1 from "@/components/slides/cloud/cc-slide-1"; // Removed CcSlide1
 import CcSlide2 from "@/components/slides/cloud/cc-slide-2";
 import CcSlide3 from "@/components/slides/cloud/cc-slide-3";
 import CcSlide4 from "@/components/slides/cloud/cc-slide-4";
@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 9; // Updated totalSlides
+  const totalSlides = 8; // Updated totalSlides to 8
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -66,14 +66,14 @@ export default function Home() {
   const renderSlide = () => {
     switch (currentSlide) {
       case 0: return <CcWelcomeSlide />;
-      case 1: return <CcSlide1 />;
-      case 2: return <CcSlide2 />;
-      case 3: return <CcSlide3 />;
-      case 4: return <CcSlide4 />;
-      case 5: return <CcSlide5 />;
-      case 6: return <CcSlide6 />;
-      case 7: return <CcSlide7 />;
-      case 8: return <CcGoodbyeSlide />;
+      // Case 1 now renders CcSlide2, and subsequent cases are shifted
+      case 1: return <CcSlide2 />;
+      case 2: return <CcSlide3 />;
+      case 3: return <CcSlide4 />;
+      case 4: return <CcSlide5 />;
+      case 5: return <CcSlide6 />;
+      case 6: return <CcSlide7 />;
+      case 7: return <CcGoodbyeSlide />;
       default: return <CcWelcomeSlide />;
     }
   };
@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-1 overflow-hidden overflow-y-scroll">
+      <main className="flex-1 overflow-y-auto">
         {renderSlide()}
       </main>
 

@@ -15,28 +15,28 @@ export default function CcSlide3() {
         {/* Updated main content structure for Edge Computing */}
         <div className="text-left text-lg text-gray-700 dark:text-gray-300 space-y-4">
           <p>
-            <strong>Definition:</strong> A distributed computing paradigm that brings computation and data storage closer to the sources of data – typically IoT devices or local edge servers.
+            <strong>Definition:</strong> Processing data locally, near where it's created (e.g., on a smart device or local server), instead of sending it far away to the cloud.
           </p>
           <div>
             <p className="font-semibold">Key Characteristics:</p>
             <ul className="list-disc list-inside ml-4">
-              <li>Low latency</li>
-              <li>Localized data processing</li>
-              <li>Reduced network bandwidth requirements</li>
-              <li>Enhanced privacy and security (for sensitive data)</li>
+              <li>Faster response (Low Latency)</li>
+              <li>Process data on-site (Local Processing)</li>
+              <li>Less internet traffic (Reduced Bandwidth)</li>
+              <li>Better data privacy (Local Data Handling)</li>
             </ul>
           </div>
           <p>
-            <strong>Common Use Cases:</strong> Examples: IoT gateways, smart cameras, real-time analytics in industrial settings, autonomous vehicles.
+            <strong>Common Use Cases:</strong> Uses: Smart cameras, IoT devices, self-driving cars, factory robots.
           </p>
           <p>
-            <strong>Real-life Example:</strong> Example: A smart traffic light system adjusting signals based on real-time local vehicle and pedestrian flow, or real-time patient vital sign monitoring and alerts in a hospital.
+            <strong>Real-life Example:</strong> Example: Smart traffic lights that react instantly to local traffic, or hospital monitors that quickly alert staff to patient changes.
           </p>
         </div>
 
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-12">
           {/* Changed footer text */}
-          <p>Speed and responsiveness, close to the action.</p>
+          <p>Fast, local processing for immediate results.</p>
         </div>
       </div>
     </div>

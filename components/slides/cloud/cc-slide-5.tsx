@@ -14,50 +14,57 @@ export default function CcSlide5() {
           <GitCompareArrows className="h-10 w-10 text-blue-600 dark:text-blue-300" />
         </div>
         {/* Changed main title */}
-        <h1 className="text-5xl font-bold mb-10">Key Differences: Cloud, Edge, Fog</h1> {/* Added more bottom margin */}
+        <h1 className="text-5xl font-bold mb-10">Key Differences: Cloud, Edge, Fog</h1>
 
-        {/* Updated main content structure for Comparison */}
-        <div className="text-left grid md:grid-cols-3 gap-x-6 gap-y-8 text-gray-700 dark:text-gray-300">
-          {/* Column 1: Cloud Computing */}
-          <div className="space-y-2">
-            <h3 className="text-2xl font-semibold mb-3 text-blue-600 dark:text-blue-400">Cloud Computing</h3>
-            <ul className="list-disc list-inside text-base space-y-1">
-              <li><strong>Processing:</strong> Centralized data centers</li>
-              <li><strong>Latency:</strong> Higher</li>
-              <li><strong>Bandwidth:</strong> High demand</li>
-              <li><strong>Scalability:</strong> Massive, elastic</li>
-              <li><strong>Use Cases:</strong> Big data, complex analytics, web hosting, enterprise applications</li>
-            </ul>
-          </div>
-
-          {/* Column 2: Edge Computing */}
-          <div className="space-y-2">
-            <h3 className="text-2xl font-semibold mb-3 text-green-600 dark:text-green-400">Edge Computing</h3>
-            <ul className="list-disc list-inside text-base space-y-1">
-              <li><strong>Processing:</strong> At or near device/sensor</li>
-              <li><strong>Latency:</strong> Lowest</li>
-              <li><strong>Bandwidth:</strong> Low demand on core network</li>
-              <li><strong>Scalability:</strong> Distributed, localized</li>
-              <li><strong>Use Cases:</strong> IoT, real-time monitoring, autonomous systems, AR/VR</li>
-            </ul>
-          </div>
-
-          {/* Column 3: Fog Computing */}
-          <div className="space-y-2">
-            <h3 className="text-2xl font-semibold mb-3 text-purple-600 dark:text-purple-400">Fog Computing</h3>
-            <ul className="list-disc list-inside text-base space-y-1">
-              <li><strong>Processing:</strong> Network edge, local networks</li>
-              <li><strong>Latency:</strong> Low to moderate</li>
-              <li><strong>Bandwidth:</strong> Moderate, aggregates edge data</li>
-              <li><strong>Scalability:</strong> Distributed, regional</li>
-              <li><strong>Use Cases:</strong> Smart cities, connected vehicles, large IIoT, content delivery networks (CDNs)</li>
-            </ul>
-          </div>
+        {/* New Table Structure */}
+        <div className="overflow-x-auto shadow-md sm:rounded-lg mt-4">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border-collapse border border-gray-200 dark:border-gray-700">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th scope="col" className="px-4 py-3 border border-gray-200 dark:border-gray-700">Feature</th>
+                <th scope="col" className="px-4 py-3 border border-gray-200 dark:border-gray-700">Cloud Computing</th>
+                <th scope="col" className="px-4 py-3 border border-gray-200 dark:border-gray-700">Edge Computing</th>
+                <th scope="col" className="px-4 py-3 border border-gray-200 dark:border-gray-700">Fog Computing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white border border-gray-200 dark:border-gray-700">Processing Location</th>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Big data centers</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">On or near device</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Local network / regional</td>
+              </tr>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white border border-gray-200 dark:border-gray-700">Speed (Latency)</th>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Slower (higher)</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Fastest (lowest)</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Fast (low to moderate)</td>
+              </tr>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white border border-gray-200 dark:border-gray-700">Internet Use (Bandwidth)</th>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">High demand</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Low demand on core network</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Moderate, aggregates edge</td>
+              </tr>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white border border-gray-200 dark:border-gray-700">Growth (Scalability)</th>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Huge, very flexible</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Spread out, local</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Spread out, regional</td>
+              </tr>
+              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white border border-gray-200 dark:border-gray-700">Common Uses</th>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Netflix, Gmail, photo storage</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Smart cameras, IoT, self-driving cars</td>
+                <td className="px-4 py-3 border border-gray-200 dark:border-gray-700">Smart cities, connected cars</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-12">
           {/* Changed footer text */}
-          <p>Understanding their distinct roles and advantages.</p>
+          <p>Comparing Cloud, Edge, and Fog side-by-side.</p>
         </div>
       </div>
     </div>

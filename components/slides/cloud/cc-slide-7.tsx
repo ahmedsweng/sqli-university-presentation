@@ -15,33 +15,33 @@ export default function CcSlide7() {
         {/* Updated main content structure for Smart Factory Scenario */}
         <div className="text-gray-700 dark:text-gray-300">
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-10"> {/* Increased bottom margin */}
-            Illustrating how Edge, Fog, and Cloud computing collaborate in an advanced manufacturing environment.
+            See how Edge, Fog, and Cloud work together in a Smart Factory.
           </p>
           <div className="space-y-6 text-left"> {/* Increased space between sections */}
             <div>
-              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">🏭 Edge Computing (On the Factory Floor)</h3>
+              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">On the Factory Floor (Edge):</h3>
               <ul className="list-disc list-inside text-base space-y-1 ml-4"> {/* Indented list */}
-                <li>Sensors on machinery collect real-time operational data (temperature, vibration, output).</li>
-                <li>Local processors make immediate decisions: e.g., halt a machine if a critical anomaly is detected.</li>
-                <li>Data is filtered and prioritized before being sent to the Fog layer.</li>
+                <li>Sensors on machines gather data (temp, vibrations, etc.).</li>
+                <li>Quick local decisions: e.g., stop a machine if something's wrong.</li>
+                <li>Filters important data before sending to Fog.</li>
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-2">☁️ Fog Computing (Factory-Level Network)</h3>
+              <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-2">Factory Network (Fog):</h3>
               <ul className="list-disc list-inside text-base space-y-1 ml-4"> {/* Indented list */}
-                <li>Fog nodes aggregate data from multiple machines or production lines.</li>
-                <li>Perform localized analytics: e.g., optimize a specific production line's efficiency in near real-time.</li>
-                <li>Provide short-term data storage and faster response for factory-wide systems.</li>
-                <li>Relay summarized and relevant data to the Cloud.</li>
+                <li>Gathers data from many machines.</li>
+                <li>Analyzes local data: e.g., helps one production line run better.</li>
+                <li>Short-term data storage for faster factory responses.</li>
+                <li>Sends summaries to the Cloud.</li>
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-2">🌐 Cloud Computing (Corporate Level)</h3>
+              <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-2">Main Company Systems (Cloud):</h3>
               <ul className="list-disc list-inside text-base space-y-1 ml-4"> {/* Indented list */}
-                <li>Receives aggregated data from multiple smart factories.</li>
-                <li>Performs long-term data analysis, runs machine learning models for predictive maintenance.</li>
-                <li>Hosts business intelligence dashboards for overall equipment effectiveness (OEE).</li>
-                <li>Manages software updates and configurations for Edge and Fog devices.</li>
+                <li>Gets data from all factories.</li>
+                <li>Big analysis, predicts when machines need fixing.</li>
+                <li>Shows company-wide reports on how well things are running.</li>
+                <li>Manages updates for Edge and Fog systems.</li>
               </ul>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function CcSlide7() {
 
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-12">
           {/* Changed footer text */}
-          <p>Integrated intelligence from shop floor to enterprise.</p>
+          <p>Teamwork from factory floor to main office.</p>
         </div>
       </div>
     </div>

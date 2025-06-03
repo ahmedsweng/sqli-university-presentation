@@ -12,7 +12,7 @@ export default function WelcomeSlide() {
         <h1 className="text-5xl font-bold mb-6">Cloud Computing</h1>
         {/* Changed subtitle */}
         <h2 className="text-2xl font-semibold mb-8 text-blue-600 dark:text-blue-400">
-          Cloud, Edge and Fog computing: Their definitions, tools, differences between them and their hierarchy.
+          Exploring Cloud, Edge, and Fog Computing: Definitions, tools, differences, and their hierarchy.
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 text-left max-w-2xl mx-auto">

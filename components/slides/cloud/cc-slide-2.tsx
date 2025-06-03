@@ -15,29 +15,29 @@ export default function CcSlide2() {
         {/* Updated main content structure */}
         <div className="text-left text-lg text-gray-700 dark:text-gray-300 space-y-4">
           <p>
-            <strong>Definition:</strong> A model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, services) that can be rapidly provisioned and released with minimal management effort or service provider interaction.
+            <strong>Definition:</strong> Access shared computing resources (like servers, storage, apps) over the internet, on-demand. Easily scale up or down with minimal fuss.
           </p>
           <div>
             <p className="font-semibold">Key Characteristics:</p>
             <ul className="list-disc list-inside ml-4">
-              <li>On-demand self-service</li>
-              <li>Broad network access</li>
-              <li>Resource pooling</li>
-              <li>Rapid elasticity</li>
-              <li>Measured service</li>
+              <li>Use it when you need it (Self-Service)</li>
+              <li>Access from anywhere (Broad Network Access)</li>
+              <li>Shared resources for many users (Resource Pooling)</li>
+              <li>Scale up or down easily (Rapid Elasticity)</li>
+              <li>Pay for what you use (Measured Service)</li>
             </ul>
           </div>
           <p>
-            <strong>Common Platforms:</strong> Examples: Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP)
+            <strong>Common Platforms:</strong> Key Providers: AWS, Azure, GCP
           </p>
           <p>
-            <strong>Real-life Example:</strong> Example: Streaming services like Netflix, or email services like Gmail.
+            <strong>Real-life Example:</strong> Examples: Netflix streaming, Gmail, online photo storage.
           </p>
         </div>
 
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-12">
           {/* Changed footer text */}
-          <p>Centralized power and scalability.</p>
+          <p>Powerful, scalable, and accessible from anywhere.</p>
         </div>
       </div>
     </div>

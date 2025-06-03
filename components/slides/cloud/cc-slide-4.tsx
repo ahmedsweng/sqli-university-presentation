@@ -15,28 +15,28 @@ export default function CcSlide4() {
         {/* Updated main content structure for Fog Computing */}
         <div className="text-left text-lg text-gray-700 dark:text-gray-300 space-y-4">
           <p>
-            <strong>Definition:</strong> A decentralized computing infrastructure where data, compute, storage, and applications are distributed in the most logical, efficient place between the data source (edge) and the cloud. It acts as an intermediate layer.
+            <strong>Definition:</strong> A middle layer between local Edge devices and the central Cloud. It handles tasks that are too big for Edge but need quicker response than the Cloud.
           </p>
           <div>
             <p className="font-semibold">Key Characteristics:</p>
             <ul className="list-disc list-inside ml-4">
-              <li>Extends cloud capabilities closer to the edge</li>
-              <li>Supports geographically distributed services</li>
-              <li>Offers better latency than cloud for nearby devices</li>
-              <li>Hierarchical and distributed nature</li>
+              <li>Connects Edge and Cloud (Intermediate Layer)</li>
+              <li>Manages data from many Edge devices (Distributed)</li>
+              <li>Faster than Cloud for local tasks (Improved Latency)</li>
+              <li>Supports services across a region (Geographic Spread)</li>
             </ul>
           </div>
           <p>
-            <strong>Common Use Cases:</strong> Examples: Smart city applications (e.g., utility management), connected vehicles, large-scale sensor networks.
+            <strong>Common Use Cases:</strong> Uses: Smart cities (e.g., traffic flow, utility grids), connected cars, large industrial sites.
           </p>
           <p>
-            <strong>Real-life Example:</strong> Example: A city-wide smart grid using fog nodes to manage energy distribution and fault detection for local neighborhoods, reporting aggregated data to the central cloud.
+            <strong>Real-life Example:</strong> Example: A smart city using fog nodes to manage local traffic systems and energy grids, sending summaries to the main cloud.
           </p>
         </div>
 
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-12">
           {/* Changed footer text */}
-          <p>Connecting the edge to the cloud, intelligently.</p>
+          <p>The smart link between local Edge and central Cloud.</p>
         </div>
       </div>
     </div>
